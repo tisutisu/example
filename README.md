@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/tisutisu/example/branch/main/graph/badge.svg)](https://codecov.io/gh/tisutisu/example)
+[![codecov](https://codecov.io/gh/tisutisu/example/branch/master/graph/badge.svg)](https://codecov.io/gh/tisutisu/example)
 # Go example projects
 
 [![Go Reference](https://pkg.go.dev/badge/golang.org/x/example.svg)](https://pkg.go.dev/golang.org/x/example)
