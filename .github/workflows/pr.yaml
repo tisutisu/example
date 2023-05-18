@@ -41,8 +41,8 @@ jobs:
           # Path to SARIF file relative to the root of the repository
           sarif_file: results.sarif
 
-  envtest:
-    name: Envtest
+  code_coverage:
+    name: Code Coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 
@@ -53,24 +53,8 @@ jobs:
           go-version-file: './go.mod'
       - name: Run tests and collect coverage
         run: make test
-      - name: Upload coverage reports to codecov
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: cover.out
-
-  codecov:
-    name: Upload reports to Codecov
-    needs: envtest
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: coverage-report
       - name: Upload codecov report
         uses: codecov/codecov-action@v3.1.1
         with:
           fail_ci_if_error: true
+      
