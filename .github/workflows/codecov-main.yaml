@@ -1,10 +1,10 @@
 name: Codecov report on push to the "main" branch
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   coverage:
-    name: Envtest and coverage report
+    name: Upload code coverage report
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version-file: './go.mod'
-      - name: Run tests
+      - name: Run tests and generate report
         run: make test
       - name: Upload Codecov Report
         uses: codecov/codecov-action@v3
